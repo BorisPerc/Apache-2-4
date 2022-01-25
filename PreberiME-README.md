@@ -54,9 +54,11 @@ sudo nano /etc/apache2/conf-available/localized-error-pages.conf
 34. #		  SetHandler directive in a <Location /> context somewhere. Adding
 35. #		  the following three lines AFTER the <Location /> context should
 36. #		  make it work in most cases:
+  
 <Location /error/>
     SetHandler none
 </Location>
+  
 40. #
 41. # The internationalized error documents require mod_alias, mod_include
 42. # and mod_negotiation.  To activate them, uncomment the following 37 lines.
