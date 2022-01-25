@@ -81,7 +81,13 @@ sudo service apache2 restart
 
 # Ali github source:
 
+cd /usr/share/apache2/error/
+
 sudo wget https://github.com/BorisPerc/Apache-2-4/blob/main/localized-error-pages-apache-modul.zip
+
+unzip localized-error-pages-apache-modul.zip
+
+sudo systemctl restart apache2
   
 ## Lažje vam bo če upravljate vaš strežnik preko WEBMin priporočljivo za lažje upravljanje in konfiguracijo datotek = https://webmin.com/
 Naložite to datoteko preko github v vašo mapo "/usr/share/apache2/error/" ker jo z desnim gumbom miške ko kliknete na mapo zip odpakirate v meniju "Extract"
