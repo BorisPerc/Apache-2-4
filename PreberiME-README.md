@@ -18,46 +18,10 @@ sudo a2enmod negotiation include alias rewrite
 
 sudo nano /etc/apache2/conf-available/localized-error-pages.conf
 
-1. # Customizable error responses come in three flavors:
-2. # 1) plain text
-3. # 2) local redirects
-4. # 3) external redirects
-5. #
-6. # Some examples:
-7. #ErrorDocument 500 "The server made a boo boo."
-8. #ErrorDocument 404 /missing.html
-9. #ErrorDocument 404 "/cgi-bin/missing_handler.pl"
-10. #ErrorDocument 402 http://www.example.com/subscription_info.html
-11. #
-12. 
-13. #
-14. # Putting this all together, we can internationalize error responses.
-15. #
-16. # We use Alias to redirect any /error/HTTP_<error>.html.var response to
-17. # our collection of by-error message multi-language collections.  We use
-18. # includes to substitute the appropriate text.
-19. #
-20. # You can modify the messages' appearance without changing any of the
-21. # default HTTP_<error>.html.var files by adding the line:
-22. #
-23. #Alias /error/include/ "/your/include/path/"
-24. #
-25. # which allows you to create your own set of files by starting with the
-26. # /usr/share/apache2/error/include/ files and copying them to /your/include/path/,
-27. # even on a per-VirtualHost basis.  If you include the Alias in the global server
-28. # context, is has to come _before_ the 'Alias /error/ ...' line.
-29. #
-30. # The default include files will display your Apache version number and your
-31. # ServerAdmin email address regardless of the setting of ServerSignature.
-32. #
-33. # WARNING: The configuration below will NOT work out of the box if you have a
-34. #		  SetHandler directive in a <Location /> context somewhere. Adding
-35. #		  the following three lines AFTER the <Location /> context should
-36. #		  make it work in most cases:
-
-    <Location /error/>
-        SetHandler none
-    </Location>
+## Lahko odkomentirate linijo 37-39
+<Location /error/>
+SetHandler none
+</Location>
 
 40. #
 41. # The internationalized error documents require mod_alias, mod_include
