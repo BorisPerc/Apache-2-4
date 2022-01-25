@@ -19,9 +19,9 @@ sudo a2enmod negotiation include alias rewrite
 sudo nano /etc/apache2/conf-available/localized-error-pages.conf
 
 ## Lahko odkomentirate linijo 37-39
-<Location /error/>
-SetHandler none
-</Location>
+37.     <Location /error/>
+38.         SetHandler none
+39.     </Location>
 
 ## Odkomentirajte linijo 44-79 ne pozavit vpisat v liniji 56 še slovensko kodo se pravi sl se pravi tako: LanguagePriority en sl cs de es fr it nl sv pt-br ro
 43. 
