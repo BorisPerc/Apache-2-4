@@ -23,9 +23,7 @@ sudo nano /etc/apache2/conf-available/localized-error-pages.conf
 SetHandler none
 </Location>
 
-40. #
-41. # The internationalized error documents require mod_alias, mod_include
-42. # and mod_negotiation.  To activate them, uncomment the following 37 lines.
+## Odkomentirajte linijo 44-79 ne pozavit vpisat v liniji 56 še slovensko kodo se pravi sl se pravi tako: LanguagePriority en sl cs de es fr it nl sv pt-br ro
 43. 
 <IfModule mod_negotiation.c>
     <IfModule mod_include.c>
@@ -64,7 +62,6 @@ SetHandler none
     </IfModule>
 </IfModule>
 
-81. # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 
 
 ## Naložite to datoteko in jo odpakirajte v vašo mapo "/usr/share/apache2/error/" datoteka "localized-error-pages-apache-modul.zip":
