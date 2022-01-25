@@ -5,6 +5,7 @@ Modul Localized Error Pages for Apache 2.4 - Slovenski prevod strani z napakami 
 
 Postopek aktivacije in namestitve modula za strani z napakami:
 ## Namestitev Apache:
+
 sudo apt update
 sudo apt install apache2 unzip -y
 
@@ -13,6 +14,7 @@ Ko ste namestili Apache WEB Server aktivirajte v terminalu sledeče module:
 sudo a2enmod negotiation include alias rewrite
 
 ## Zdaj v terminalu ali lažje vam je uporaba WEBMin modificirajte oz. odkomentirajte, kot je spodaj prikazano linijo 37-39 ter 44-79 ne pozavit vpisat v liniji 56 še slovensko kodo se pravi sl:
+
 sudo nano /etc/apache2/conf-available/localized-error-pages.conf
 
 # Customizable error responses come in three flavors:
@@ -101,7 +103,7 @@ sudo nano /etc/apache2/conf-available/localized-error-pages.conf
 ## Naložite to datoteko in jo odpakirajte v vašo mapo "/usr/share/apache2/error/" datoteka "localized-error-pages-apache-modul.zip":
 ## Lahko si poberete to zip datoteko tukaj preko GitHub ali pa direktno iz mojega serveja se pravi tako:
 cd /usr/share/apache2/error/
-sudo wget https://https://piramide.zapto.org/localized-error-pages-apache-modul.zip
+sudo wget https://piramide.zapto.org/localized-error-pages-apache-modul.zip
 unzip localized-error-pages-apache-modul.zip
 sudo systemctl restart apache2
   ali
