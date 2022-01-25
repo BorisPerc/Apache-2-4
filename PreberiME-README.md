@@ -18,49 +18,49 @@ sudo a2enmod negotiation include alias rewrite
 
 sudo nano /etc/apache2/conf-available/localized-error-pages.conf
 
-# Customizable error responses come in three flavors:
-# 1) plain text
-# 2) local redirects
-# 3) external redirects
-#
-# Some examples:
-#ErrorDocument 500 "The server made a boo boo."
-#ErrorDocument 404 /missing.html
-#ErrorDocument 404 "/cgi-bin/missing_handler.pl"
-#ErrorDocument 402 http://www.example.com/subscription_info.html
-#
-
-#
-# Putting this all together, we can internationalize error responses.
-#
-# We use Alias to redirect any /error/HTTP_<error>.html.var response to
-# our collection of by-error message multi-language collections.  We use
-# includes to substitute the appropriate text.
-#
-# You can modify the messages' appearance without changing any of the
-# default HTTP_<error>.html.var files by adding the line:
-#
-#Alias /error/include/ "/your/include/path/"
-#
-# which allows you to create your own set of files by starting with the
-# /usr/share/apache2/error/include/ files and copying them to /your/include/path/,
-# even on a per-VirtualHost basis.  If you include the Alias in the global server
-# context, is has to come _before_ the 'Alias /error/ ...' line.
-#
-# The default include files will display your Apache version number and your
-# ServerAdmin email address regardless of the setting of ServerSignature.
-#
-# WARNING: The configuration below will NOT work out of the box if you have a
-#		  SetHandler directive in a <Location /> context somewhere. Adding
-#		  the following three lines AFTER the <Location /> context should
-#		  make it work in most cases:
+1. # Customizable error responses come in three flavors:
+2. # 1) plain text
+3. # 2) local redirects
+4. # 3) external redirects
+5. #
+6. # Some examples:
+7. #ErrorDocument 500 "The server made a boo boo."
+8. #ErrorDocument 404 /missing.html
+9. #ErrorDocument 404 "/cgi-bin/missing_handler.pl"
+10. #ErrorDocument 402 http://www.example.com/subscription_info.html
+11. #
+12. 
+13. #
+14. # Putting this all together, we can internationalize error responses.
+15. #
+16. # We use Alias to redirect any /error/HTTP_<error>.html.var response to
+17. # our collection of by-error message multi-language collections.  We use
+18. # includes to substitute the appropriate text.
+19. #
+20. # You can modify the messages' appearance without changing any of the
+21. # default HTTP_<error>.html.var files by adding the line:
+22. #
+23. #Alias /error/include/ "/your/include/path/"
+24. #
+25. # which allows you to create your own set of files by starting with the
+26. # /usr/share/apache2/error/include/ files and copying them to /your/include/path/,
+27. # even on a per-VirtualHost basis.  If you include the Alias in the global server
+28. # context, is has to come _before_ the 'Alias /error/ ...' line.
+29. #
+30. # The default include files will display your Apache version number and your
+31. # ServerAdmin email address regardless of the setting of ServerSignature.
+32. #
+33. # WARNING: The configuration below will NOT work out of the box if you have a
+34. #		  SetHandler directive in a <Location /> context somewhere. Adding
+35. #		  the following three lines AFTER the <Location /> context should
+36. #		  make it work in most cases:
 <Location /error/>
     SetHandler none
 </Location>
-#
-# The internationalized error documents require mod_alias, mod_include
-# and mod_negotiation.  To activate them, uncomment the following 37 lines.
-
+40. #
+41. # The internationalized error documents require mod_alias, mod_include
+42. # and mod_negotiation.  To activate them, uncomment the following 37 lines.
+43. 
 <IfModule mod_negotiation.c>
     <IfModule mod_include.c>
         <IfModule mod_alias.c>
@@ -98,11 +98,12 @@ sudo nano /etc/apache2/conf-available/localized-error-pages.conf
     </IfModule>
 </IfModule>
 
-# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+81. # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 
 
 ## Naložite to datoteko in jo odpakirajte v vašo mapo "/usr/share/apache2/error/" datoteka "localized-error-pages-apache-modul.zip":
 ## Lahko si poberete to zip datoteko tukaj preko GitHub ali pa direktno iz mojega serveja se pravi tako:
+    
 cd /usr/share/apache2/error/
 sudo wget https://piramide.zapto.org/localized-error-pages-apache-modul.zip
 unzip localized-error-pages-apache-modul.zip
