@@ -1,16 +1,17 @@
 # Apache-2-4
-Apache 2.4 Strani z napakami v Slovenskem jeziku / localized-error-pages-apache-modul Slovenian Language translate
+# Apache 2.4 Strani z napakami v Slovenskem jeziku / localized-error-pages-apache-modul Slovenian Language translate
 
-Modul Localized Error Pages for Apache 2.4 - Slovenski prevod strani z napakami za vaš strežnik:
+# Modul Localized Error Pages for Apache 2.4 - Slovenski prevod strani z napakami za vaš strežnik:
 
-Postopek aktivacije in namestitve modula za strani z napakami:
+# Postopek aktivacije in namestitve modula za strani z napakami:
 ## Namestitev Apache:
 
 sudo apt update
 sudo apt install apache2 unzip -y
 
 ## Aktivacija modulov: Negotiation + Include + Alias in po potrebi še Rewrite
-Ko ste namestili Apache WEB Server aktivirajte v terminalu sledeče module:
+# Ko ste namestili Apache WEB Server aktivirajte v terminalu sledeče module:
+
 sudo a2enmod negotiation include alias rewrite
 
 ## Zdaj v terminalu ali lažje vam je uporaba WEBMin modificirajte oz. odkomentirajte, kot je spodaj prikazano linijo 37-39 ter 44-79 ne pozavit vpisat v liniji 56 še slovensko kodo se pravi sl:
